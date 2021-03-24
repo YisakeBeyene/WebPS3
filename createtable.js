@@ -33,3 +33,10 @@ function generate_table() {
     // sets the border attribute of tbl to 2;
     tbl.setAttribute("border", "2");
   }
+
+function table_page(){
+  var body = document.getElementsByTagName("body")[0];
+  window.location.href="table.html";
+
+  
+}
