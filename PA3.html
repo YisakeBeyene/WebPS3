@@ -4,14 +4,17 @@
 <head>
     <title Multiplication Table Challenge></title>
     <link rel="stylesheet" type="text/css" href="multiplication_table.css">
+    <script src="createtable.js"></script>
 </head>
 <body>
     <div id="main">
 		<h1>The Multiplication Table Challenge</h1>
 
-        Size: <input type="text" name="inst"><br>
-        <div> <button type="button" onClick="getList()"> Create Table </button> </div> <br>
-        <hr>
+        
+        <form action="table.html" method="GET">
+            <input type="text" name="serialNumber" />
+            <input type="submit" value="Generate a table." onclick="generate_table()"/>
+        </form>
         <img src="multiplication table pic.png" alt="table" height="300" width="300">
 
     </div>

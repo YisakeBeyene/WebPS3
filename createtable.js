@@ -1,11 +1,11 @@
 function generate_table() {
     // get the reference for the body
     var body = document.getElementsByTagName("body")[0];
-  
+    document.getElementById("write").innerHTML = window.location.search;
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
-  
+    
     // creating all cells
     for (var i = 0; i < 5; i++) {
       // creates a table row
@@ -15,6 +15,7 @@ function generate_table() {
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
         // the end of the table row
+        
         var cell = document.createElement("td");
         var cellText = document.createTextNode("cell in row "+i+", column "+j);
         cell.appendChild(cellText);
