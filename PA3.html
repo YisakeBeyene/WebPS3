@@ -12,13 +12,18 @@
 
         
         <form action="table.html" method="GET">
-            <input type="text" name="serialNumber" />
+            <input type="text" name="serialNumber" id="myInput"/>
             <input type="submit" value="Generate a table." />
         </form>
         <img src="multiplication table pic.png" alt="table" height="300" width="300">
 
     </div>
-    
+    <script>
+        function getInputValue() {
+            var inputVal = document.getElementById("myInput").value;
+            alert(inputVal);
+        }
+   </script>
 </body>
 
 <script src="javascript.js"></script>
