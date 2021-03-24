@@ -17,7 +17,9 @@ function generate_table() {
         
         var cell = document.createElement("td");
         if (i*j==0){
-          if(i==0){
+          if (i==0 && j==0){
+            var cellText = document.createTextNode(" ")
+          }else if(i==0){
             var cellText = document.createTextNode(j)
           }else{
             var cellText = document.createTextNode(i)
