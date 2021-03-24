@@ -16,7 +16,16 @@ function generate_table() {
         // the end of the table row
         
         var cell = document.createElement("td");
-        var cellText = document.createTextNode("cell in row "+i+", column "+j);
+        if (i*j==0){
+          if(i==0){
+            var cellText = document.createTextNode(j)
+          }else{
+            var cellText = document.createTextNode(i)
+          }
+        }else{
+          var cellText = document.createTextNode(i*j)
+        }
+        ;
         cell.appendChild(cellText);
         row.appendChild(cell);
       }
