@@ -3,8 +3,8 @@ function generate_table() {
     var body = document.getElementsByTagName("body")[0];
     
     // creates a <table> element and a <tbody> element
-    var div = document.createElement("sda");
     var tbl = document.createElement("table");
+    tbl.id = 'something';
     var tblBody = document.createElement("tbody");
     
     var table_size = document.getElementById("myInput").value;
@@ -90,28 +90,28 @@ function generate_table() {
 
     // 3. Add event handler
     button.addEventListener ("click", function() {
-      button.remove();
+      // button.remove();
       checkIfCorrect(answerChoice.value, correctAnswer, button);
     });
 
     
   }
 
-  function checkIfCorrect(answerChoice, correctAnswer){
+  function checkIfCorrect(answerChoice, correctAnswer, button){
     //Correct or Incorrect answer
-    var div = document.createElement('div');
-    
     if (answerChoice == correctAnswer){
       div.id = 'right';
+      button.remove();
       div.innerHTML = 'Correct. Good Job!';
     }else{
       div.id = 'wrong';
+      button.innerHTML = "Try Again";
       div.innerHTML = 'Wrong. Try Again!';
     }
     
     div.className = 'border pad';
 
-    // button.remove();
+    
     document.body.appendChild(div);
     alert(cellText)
   }
