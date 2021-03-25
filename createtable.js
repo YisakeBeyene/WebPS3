@@ -61,6 +61,8 @@ function generate_table() {
         cell.style.height = '30px';
         cell.appendChild(cellText);
         row.appendChild(cell);
+
+        
       }
   
       // add the row to the end of the table body
@@ -94,7 +96,22 @@ function generate_table() {
       checkIfCorrect(answerChoice.value, correctAnswer, button);
     });
 
-    //var timeout= setInterval(function(){checkIfCorrect},1000);
+    var time= userInput;
+    setInterval(function(){
+      if (time < 0){
+        var answerChoice = document.getElementById("inputAnswer").value;
+        if (answerChoice== correctAnswer){
+          document.getElementById("table").innerHTML = '<p style= "color:green">Correct. Good Job!</p>';
+        } else{
+          document.getElementById("table").innerHTML = '<p style= "color:red">Wrong. Try Again!</p>';
+        }
+        document.getElementById("countdown").innerHTML = "";
+        setInterval('window.location.reload()',3000);
+        }else{
+          document.getElementById("countdown").innerHTML = + time + "seconds left";
+          time--;
+        }
+    },1000)
     
   }
 
@@ -115,21 +132,11 @@ function generate_table() {
     // button.remove();
     document.body.appendChild(div);
     alert(cellText)
+
+  
   }
 
-  // var seconds=document.getElementById("countdown").textContent;
-  // var countdown =setInterval(function(){
-  //   seconds--;
-  //   (seconds == 1) ? document.getElementById("plural").textContent = "": document.getElementById("plural").textContent = "s";
-  //   document.getElementById("countdown").textContent = seconds;
-  //   if (seconds <= 0) clearInterval(countdown);
-  // },1000)
 
-// var seconds = 5, $seconds = document.querySelector('#countdown');
-// (function countdown() {
-//     $seconds.textContent = seconds + ' second' + (seconds == 1 ?  '' :  's')
-//     if(seconds --> 0) setTimeout(countdown, 1000)
-// })();
 
 
   
