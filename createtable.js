@@ -9,18 +9,23 @@ function getInputValue() {
 function generate_table() {
     // get the reference for the body
     // var table_size = getInputValue();
-    var table_size = sessionStorage.getItem("table_size");
+    // var table_size = sessionStorage.getItem("table_size");
+    
     var body = document.getElementsByTagName("body")[0];
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
     
+    // var inputVal = document.getElementById("myInput").value;
+    // alert(inputVal)
+    table_size = 5
+
     // creating all cells
-    for (var i = 0; i < table_size; i++) {
+    for (var i = 0; i <= table_size; i++) {
       // creates a table row
       var row = document.createElement("tr");
   
-      for (var j = 0; j < table_size; j++) {
+      for (var j = 0; j <= table_size; j++) {
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
         // the end of the table row

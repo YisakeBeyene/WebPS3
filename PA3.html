@@ -11,12 +11,9 @@
 		<h1>The Multiplication Table Challenge</h1>
 
         
-        <form action="table.html" method="GET" id="form1">
-            <label for="form1" id="formLable">Choose the number of boxes: </label>
-            <input type="text" name="serialNumber" id="myInput"/>
-            <input type="submit" value="Generate a table." onclick="getInputValue()"/>
-        </form>
-        <img src="multiplication table pic.png" alt="table" height="300" width="300">
+        <label for="form1" id="formLable">Choose the number of boxes: </label>
+        <input type="text" name="numberOfBox" id="myInput"/>
+        <input type="submit" value="Generate a table." onclick="generate_table()"/>
 
     </div>
 </body>
