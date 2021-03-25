@@ -8,10 +8,14 @@ function generate_table() {
     var tblBody = document.createElement("tbody");
     
     var table_size = document.getElementById("myInput").value;
+    var inputCheck = document.createElement('div');
+    inputCheck.id = 'wrong';
+    inputCheck.innerHTML = '';
+    document.body.appendChild(inputCheck);
 
     if(table_size>20 || table_size<1){
-      var inputCheck = document.createElement('div');
-      inputCheck.id = 'wrong';
+      
+      
       inputCheck.innerHTML = 'Input should be between 0 and 20';
       document.body.appendChild(inputCheck);
       return;
@@ -105,15 +109,15 @@ function generate_table() {
         if (answerChoice.value == correctAnswer){
           div.id = 'right';
           div.innerHTML = 'Correct. Good Job!';
-          // alert('correct is: '+ correctAnswer);
-          // alert('answer is: '+ answerChoice);
+          // tbl.remove();
         }else{
           div.id = 'wrong';
           div.innerHTML = 'Wrong. Try Again!';
-          // alert('correct: '+correctAnswer);
-          // alert('answer: '+answerChoice);
+          // tbl.remove();
         }
         countDownDiv.innerHTML = '';
+        tbl.remove();
+
         // setInterval('window.location.reload()',1000);
       }else{
 
