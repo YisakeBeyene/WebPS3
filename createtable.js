@@ -61,6 +61,8 @@ function generate_table() {
         cell.style.height = '30px';
         cell.appendChild(cellText);
         row.appendChild(cell);
+
+        
       }
   
       // add the row to the end of the table body
@@ -82,7 +84,7 @@ function generate_table() {
 
     // 1. Create the button
     var button = document.createElement("button");
-    button.innerHTML = "Do Something";
+    button.innerHTML = "Check Answer";
 
     // 2. Append somewhere
     var body = document.getElementsByTagName("body")[0];
@@ -94,6 +96,22 @@ function generate_table() {
       checkIfCorrect(answerChoice.value, correctAnswer, button);
     });
 
+    var time= userInput;
+    setInterval(function(){
+      if (time < 0){
+        var answerChoice = document.getElementById("inputAnswer").value;
+        if (answerChoice== correctAnswer){
+          document.getElementById("table").innerHTML = '<p style= "color:green">Correct. Good Job!</p>';
+        } else{
+          document.getElementById("table").innerHTML = '<p style= "color:red">Wrong. Try Again!</p>';
+        }
+        document.getElementById("countdown").innerHTML = "";
+        setInterval('window.location.reload()',3000);
+        }else{
+          document.getElementById("countdown").innerHTML = + time + "seconds left";
+          time--;
+        }
+    },1000)
     
   }
 
@@ -114,7 +132,11 @@ function generate_table() {
     
     document.body.appendChild(div);
     alert(cellText)
+
+  
   }
+
+
 
 
   
