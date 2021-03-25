@@ -18,3 +18,13 @@ button{
     margin:20px;
     font-family: "Times New Roman", Georgia, Serif;
 }
+
+#right{
+    color: green;
+    font-size: 20pt;
+}
+
+#wrong{
+    color: red;
+    font-size: 20pt;
+}
