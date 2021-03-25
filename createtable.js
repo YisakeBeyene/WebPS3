@@ -82,6 +82,39 @@ function generate_table() {
   
     document.body.appendChild(div);
 
+    
+    // var divcountDownDiv = document.createElement('div');
+    // divcountDownDiv.innerHTML = 'sdfa';
+    // document.body.appendChild(divcountDownDiv);
+    
+
+    var time= userInput;
+    
+    var divcountDownDiv = document.createElement('div');
+    divcountDownDiv.innerHTML = 'sdfa';
+    document.body.appendChild(divcountDownDiv);
+
+    setInterval(function(){
+      if (time < 0){
+        if (answerChoice == correctAnswer){
+          div.id = 'right';
+          button.remove();
+          div.innerHTML = 'Correct. Good Job!';
+        }else{
+          div.id = 'wrong';
+          button.innerHTML = "Try Again";
+          div.innerHTML = 'Wrong. Try Again!';
+        }
+        countDownDiv.innerHTML = "";
+        setInterval('window.location.reload()',1000);
+        }else{
+          countDownDiv.innerHTML = "seconds left";
+          time--;
+          
+        }
+        document.body.appendChild(divcountDownDiv);
+    },1000);
+    
     // 1. Create the button
     var button = document.createElement("button");
     button.innerHTML = "Check Answer";
@@ -94,29 +127,18 @@ function generate_table() {
     button.addEventListener ("click", function() {
       // button.remove();
       checkIfCorrect(answerChoice.value, correctAnswer, button);
-    });
-
-    var time= userInput;
-    setInterval(function(){
-      if (time < 0){
-        var answerChoice = document.getElementById("inputAnswer").value;
-        if (answerChoice== correctAnswer){
-          document.getElementById("table").innerHTML = '<p style= "color:green">Correct. Good Job!</p>';
-        } else{
-          document.getElementById("table").innerHTML = '<p style= "color:red">Wrong. Try Again!</p>';
-        }
-        document.getElementById("countdown").innerHTML = "";
-        setInterval('window.location.reload()',3000);
-        }else{
-          document.getElementById("countdown").innerHTML = + time + "seconds left";
-          time--;
-        }
-    },1000)
-    
+    })
   }
 
   function checkIfCorrect(answerChoice, correctAnswer, button){
+
+    
+
+    //Old function
     //Correct or Incorrect answer
+
+    var div = document.createElement('div');
+
     if (answerChoice == correctAnswer){
       div.id = 'right';
       button.remove();
