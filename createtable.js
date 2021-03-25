@@ -8,17 +8,13 @@ function getInputValue() {
 
 function generate_table() {
     // get the reference for the body
-    // var table_size = getInputValue();
-    // var table_size = sessionStorage.getItem("table_size");
-    
     var body = document.getElementsByTagName("body")[0];
+    
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
     
-    // var inputVal = document.getElementById("myInput").value;
-    // alert(inputVal)
-    table_size = 5
+    var table_size = document.getElementById("myInput").value;
 
     // creating all cells
     for (var i = 0; i <= table_size; i++) {
