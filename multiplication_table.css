@@ -1,4 +1,5 @@
 h1{
+    text-align: center;
     color:lightblue;
 }
 #main{
@@ -19,6 +20,19 @@ button{
     font-family: "Times New Roman", Georgia, Serif;
 }
 
+table{
+    border:5px;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%
+}
+
+p{
+    text-align:center;
+    font-size: 21px;
+    font-weight: 600;
+}
 #right{
     color: green;
     font-size: 20pt;
@@ -34,7 +48,10 @@ button{
     height: 30px;
 }
 
-#something{
-    align-items: center;
-    vertical-align: center;
+#odd{
+    color: blanchedalmond;
+}
+
+#even{
+
 }
