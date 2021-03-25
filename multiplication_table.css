@@ -28,3 +28,16 @@ button{
     color: red;
     font-size: 20pt;
 }
+
+#inputAnswer{
+    width: 30px;
+    height: 30px;
+}
+
+#odd{
+    color: blanchedalmond;
+}
+
+#even{
+
+}

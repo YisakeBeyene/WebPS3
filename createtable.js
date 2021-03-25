@@ -19,40 +19,46 @@ function generate_table() {
     var answerChoice;
     var correctAnswer;
 
-    // alert(questionRow);
-    // alert(questionColumn);
-
     // creating all cells
     for (var i = 0; i <= table_size; i++) {
       // creates a table row
       var row = document.createElement("tr");
-  
+      
       for (var j = 0; j <= table_size; j++) {
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
         // the end of the table row
         
         var cell = document.createElement("td");
+        
         if (i*j==0){
+          var cellText;
           if (i==0 && j==0){
-            var cellText = document.createTextNode(" ")
+            cellText = document.createTextNode(" ");
           }else if(i==0){
-            var cellText = document.createTextNode(j)
+            cellText = document.createTextNode(j);
           }else{
-            var cellText = document.createTextNode(i)
+            cellText = document.createTextNode(i);
           }
+          cell.style.backgroundColor = 'yellow';
         }else if(i==questionRow && j==questionColumn){
-          var cellText = document. createElement( "INPUT" ); 
-          cellText. setAttribute( "type" , "text" );
-          cellText.style.fontSize = "30px";
+          var cellText = document.createElement("input"); 
+          cellText.type = "text";
+          cellText.id = 'inputAnswer';
           answerChoice = cellText;
           correctAnswer = i*j;
         }else{
           var cellText = document.createTextNode(i*j)
+          if ((i+j)%2==0){
+            cell.style.backgroundColor = 'green';
+          }else{
+            cell.style.backgroundColor = 'blue';
+          }
         }
         ;
-
-        cell.style.fontSize = "30px";
+        
+        cell.style.width = '30px';
+        cell.style.height = '30px';
         cell.appendChild(cellText);
         row.appendChild(cell);
       }
