@@ -9,7 +9,13 @@ function generate_table() {
     
     var table_size = document.getElementById("myInput").value;
 
-    
+    if(table_size>20 || table_size<1){
+      var inputCheck = document.createElement('div');
+      inputCheck.id = 'wrong';
+      inputCheck.innerHTML = 'Input should be between 0 and 20';
+      document.body.appendChild(inputCheck);
+      return;
+    }
   
     var div1 = document.getElementsByClassName("main");
     

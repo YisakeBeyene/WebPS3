@@ -34,24 +34,24 @@ p{
     font-weight: 600;
 }
 #right{
+    text-align:center;
     color: green;
     font-size: 20pt;
 }
 
 #wrong{
+    text-align:center;
     color: red;
     font-size: 20pt;
 }
 
 #inputAnswer{
+    text-align:center;
     width: 30px;
     height: 30px;
 }
 
-#odd{
-    color: blanchedalmond;
-}
-
-#even{
-
+#timerDiv{
+    text-align:center;
+    font-size: 20pt;
 }
