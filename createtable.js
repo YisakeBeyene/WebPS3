@@ -88,46 +88,50 @@ function generate_table() {
     // document.body.appendChild(divcountDownDiv);
     
 
-    var time= userInput;
+    var time= table_size;
     
-    var divcountDownDiv = document.createElement('div');
-    divcountDownDiv.innerHTML = 'sdfa';
-    document.body.appendChild(divcountDownDiv);
+    var countDownDiv = document.createElement('div');
+    countDownDiv.id = 'timerDiv';
 
     setInterval(function(){
+
       if (time < 0){
-        if (answerChoice == correctAnswer){
+        if (answerChoice.value == correctAnswer){
           div.id = 'right';
-          button.remove();
           div.innerHTML = 'Correct. Good Job!';
+          // alert('correct is: '+ correctAnswer);
+          // alert('answer is: '+ answerChoice);
         }else{
           div.id = 'wrong';
-          button.innerHTML = "Try Again";
           div.innerHTML = 'Wrong. Try Again!';
+          // alert('correct: '+correctAnswer);
+          // alert('answer: '+answerChoice);
         }
-        countDownDiv.innerHTML = "";
-        setInterval('window.location.reload()',1000);
-        }else{
-          countDownDiv.innerHTML = "seconds left";
-          time--;
+        countDownDiv.innerHTML = '';
+        // setInterval('window.location.reload()',1000);
+      }else{
+
+        countDownDiv.innerHTML = time + ' seconds left';
+        time--;
           
-        }
-        document.body.appendChild(divcountDownDiv);
+      }
+    
+    document.body.appendChild(countDownDiv);
     },1000);
     
-    // 1. Create the button
-    var button = document.createElement("button");
-    button.innerHTML = "Check Answer";
+    // // 1. Create the button
+    // var button = document.createElement("button");
+    // button.innerHTML = "Check Answer";
 
-    // 2. Append somewhere
-    var body = document.getElementsByTagName("body")[0];
-    body.appendChild(button);
+    // // 2. Append somewhere
+    // var body = document.getElementsByTagName("body")[0];
+    // body.appendChild(button);
 
-    // 3. Add event handler
-    button.addEventListener ("click", function() {
-      // button.remove();
-      checkIfCorrect(answerChoice.value, correctAnswer, button);
-    })
+    // // 3. Add event handler
+    // button.addEventListener ("click", function() {
+    //   // button.remove();
+    //   checkIfCorrect(answerChoice.value, correctAnswer, button);
+    // })
   }
 
   function checkIfCorrect(answerChoice, correctAnswer, button){
