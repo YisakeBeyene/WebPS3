@@ -13,10 +13,10 @@ function generate_table() {
     inputCheck.innerHTML = '';
     document.body.appendChild(inputCheck);
 
-    if(table_size>20 || table_size<1){
+    if(isNaN(table_size) || table_size>20 || table_size<1){
       
       
-      inputCheck.innerHTML = 'Input should be between 0 and 20';
+      inputCheck.innerHTML = 'Input should be an integer between 0 and 20';
       document.body.appendChild(inputCheck);
       return;
     }
