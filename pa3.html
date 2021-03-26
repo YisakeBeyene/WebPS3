@@ -1,0 +1,39 @@
+<!--Melissa Alexander, Isaac Beyene, Yeabkal Biru
+3/25/2021
+This program will make the multiplication game where a user will type
+in any number and it will generate a table with that amount of rows and columns
+so they can practice their multiplication. The program will generate a random
+box in the square and they will have to type the answer in under a certain amount 
+of time in order to get the answer correct.-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--This creates a title of the page and allows us to use css to control our style-->
+    <title Multiplication Table Challenge></title>
+    <link rel="stylesheet" type="text/css" href="pa3.css">
+    <script src="pa3.js"></script>
+</head>
+<body>
+    <div id="main">
+        <!--This creates a title in the middle of the page-->
+		<h1>The Multiplication Table Challenge</h1>
+
+        <!--These create the input box, the image, and the label of the input box-->
+        <label for="form1" id="formLable">Number of Squares: </label>
+        <input type="text" name="numberOfBox" id="myInput"/>
+        <input type="submit" value="Generate a table." onclick="generate_table()"/>
+        <img src="multiplication table pic.png" alt=multi id="img" class="center">
+
+        <div class= "sda">
+
+
+        </div>
+    </div>
+
+</body>
+
+<!--allows us to use the javascript page in reference-->
+<script src="pa3.js"></script>
+</html>
