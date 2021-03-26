@@ -1,5 +1,7 @@
 function generate_table() {
     // get the reference for the body
+    var img = document.getElementById("img");
+    img.remove();
     var body = document.getElementsByTagName("body")[0];
     
     // creates a <table> element and a <tbody> element
@@ -20,6 +22,7 @@ function generate_table() {
       document.body.appendChild(inputCheck);
       return;
     }
+
   
     var div1 = document.getElementsByClassName("main");
     
