@@ -12,19 +12,19 @@ function generate_table() {
     var table_size = document.getElementById("myInput").value;
     var inputCheck = document.createElement('div');
     inputCheck.id = 'wrong';
-    inputCheck.innerHTML = '';
     document.body.appendChild(inputCheck);
 
+    var pleaseReload = document.createElement('div');
+    pleaseReload.id = 'timerDiv';
+    pleaseReload.innerHTML = 'Please Reload the Page to do the test again!';
+    
+
     if(isNaN(table_size) || table_size>20 || table_size<1){
-      
       
       inputCheck.innerHTML = 'Input should be an integer between 0 and 20';
       document.body.appendChild(inputCheck);
       return;
     }
-
-  
-    var div1 = document.getElementsByClassName("main");
     
     var questionRow = Math.floor(Math.random() * table_size)+1;   
     var questionColumn = Math.floor(Math.random() * table_size)+1;   
@@ -95,11 +95,6 @@ function generate_table() {
   
     document.body.appendChild(div);
 
-    
-    // var divcountDownDiv = document.createElement('div');
-    // divcountDownDiv.innerHTML = 'sdfa';
-    // document.body.appendChild(divcountDownDiv);
-    
 
     var time= table_size;
     
@@ -112,16 +107,13 @@ function generate_table() {
         if (answerChoice.value == correctAnswer){
           div.id = 'right';
           div.innerHTML = 'Correct. Good Job!';
-          // tbl.remove();
         }else{
           div.id = 'wrong';
           div.innerHTML = 'Wrong. Try Again!';
-          // tbl.remove();
         }
         countDownDiv.innerHTML = '';
         tbl.remove();
 
-        // setInterval('window.location.reload()',1000);
       }else{
 
         countDownDiv.innerHTML = time + ' seconds left';
@@ -131,48 +123,6 @@ function generate_table() {
     
     document.body.appendChild(countDownDiv);
     },1000);
-    
-    // // 1. Create the button
-    // var button = document.createElement("button");
-    // button.innerHTML = "Check Answer";
-
-    // // 2. Append somewhere
-    // var body = document.getElementsByTagName("body")[0];
-    // body.appendChild(button);
-
-    // // 3. Add event handler
-    // button.addEventListener ("click", function() {
-    //   // button.remove();
-    //   checkIfCorrect(answerChoice.value, correctAnswer, button);
-    // })
-  }
-
-  function checkIfCorrect(answerChoice, correctAnswer, button){
-
-    
-
-    //Old function
-    //Correct or Incorrect answer
-
-    var div = document.createElement('div');
-
-    if (answerChoice == correctAnswer){
-      div.id = 'right';
-      button.remove();
-      div.innerHTML = 'Correct. Good Job!';
-    }else{
-      div.id = 'wrong';
-      button.innerHTML = "Try Again";
-      div.innerHTML = 'Wrong. Try Again!';
-    }
-    
-    div.className = 'border pad';
-
-    
-    document.body.appendChild(div);
-    alert(cellText)
-
-  
   }
 
 
